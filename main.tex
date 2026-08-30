@@ -1,0 +1,76 @@
+% !TeX program = latexmk
+% Template: 한국전기전자학회 논문지(j.inst.Korean.electr.electron.eng) 작성 양식
+%   게재용 최종 논문: \documentclass{kieee}
+%   심사용(신규/수정) 논문: \documentclass[review]{kieee}
+%     — 저자명·1면 각주·저자소개 자동 삭제 (투고규정 11조)
+%   단편논문: \documentclass[short]{kieee} — 최대 4면, 저자소개 생략 (규정 9·20조)
+\documentclass{kieee}
+
+\input{packages}
+\input{definitions}
+
+% 머리말 권호 정보 (게재 확정 시 학회에서 부여; 투고 단계에서는 수정할 필요 없음)
+%\journalinfo{j.inst.Korean.electr.electron.eng. Vol.**, No.**, **~**, Month 20**}
+
+% 국문·영문 제목 (규정 5조)
+\title{논문제목(국문타이틀)}
+\engtitle{Paper Title(영문타이틀)}
+\runningtitle{Paper Title}
+
+% 저자명: 영문은 이름을 먼저, 성을 뒤에 (규정 6조)
+%   소속 표시 \affmark(*), 교신저자 표시 \corrmark(★)
+\author{홍길동\affmark, 박지성\affmark\corrmark}
+\engauthor{Gil-Dong Hong\affmark, Ji-Sung Park\affmark\corrmark}
+
+% 초록: Abstract(영문초록) → 요약(국문초록) 순으로 배치, 각각 500자 내외 (규정 12조)
+\engabstract{\input{00abstract_en}}
+\abstract{\input{00abstract}}
+% 요약 하단에 5개 이상의 영문 keywords (규정 12조)
+\keywords{Keyword one, Keyword two, Keyword three, Keyword four, Keyword five}
+
+% ── 1면 하단 각주: 모든 정보를 영문으로 기재 (규정 18·19조; 심사용에서는 자동 삭제) ──
+%   모든 저자의 소속(직위 포함); 초중고 학생이 연구기관 소속인 경우 원 소속 학교와
+%   학생 신분을 병기 (규정 18조)
+\affiliation{%
+$^{*}$\,Professor, Dept.\ of Electronics Engineering, OO University}
+% 교신저자 연락처: e-mail, 전화번호 기재 (핸드폰은 기재 불가)
+\corresponding{e-mail: author@university.ac.kr, tel: +82-2-***-****}
+% 감사의 글 (연구비 지원 등; 없으면 비워 둠)
+\acknowledgment{}
+% 논문접수일 / 수정완료일 / 게재확정일 — 영문 표기 (규정 19조)
+\received{Sep. 2, 2021}
+\revised{Sep. 25, 2021}
+\accepted{Sep. 30, 2021}
+
+\begin{document}
+\maketitle
+
+\input{body/10intro}
+\input{body/20main}
+\input{body/40conclusion}
+
+% ── References: 반드시 영문, 본문 인용 순서대로 (규정 15·16조) ──
+%   저널명·도서명·컨퍼런스명은 이탤릭체, DOI는 부여된 경우에만 표기
+\bibliographystyle{ieeetr}
+\bibliography{references}
+
+% ── BIOGRAPHY: 영문 작성, 마지막 장 (규정 20조; 심사용·단편논문은 자동 삭제) ──
+%   사진: \begin{biography}[figs/photo.jpg]{이름 (Member)} 처럼 파일 지정 (23x30mm)
+\begin{authorbiographies}
+
+\begin{biography}{Gil-dong Hong (Member)}
+2000\,: BS degree in Electrical Engineering, OO University.\par
+2005\,: MS degree in OOOOO Engineering, OO University.\par
+2006\,: PhD degree in OOOOO Engineering, OO University.\par
+2003\textasciitilde2005\,: Research Engineer, Samsung Electronics.
+\end{biography}
+
+\begin{biography}{Ji-Sung Park (Member)}
+2000\,: BS degree in Electrical Engineering, OO University.\par
+2005\,: MS degree in OOOOO Engineering, OO University.\par
+2006\,: PhD degree in OOOOO Engineering, OO University.\par
+2003\textasciitilde2005\,: Research Engineer, Samsung Electronics.
+\end{biography}
+
+\end{authorbiographies}
+\end{document}

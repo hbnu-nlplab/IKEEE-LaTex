@@ -1,0 +1,54 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% include additional packages you need to use
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{appendix}
+\usepackage{url}			% for \url in bibliography
+\usepackage{adjustbox}		% 표 폭이 컬럼을 넘으면 자동 축소 (max width)
+
+% graphic, float package
+\usepackage{graphicx}		% for setting images
+\usepackage{float}			% for float objects
+\usepackage{subfloat}		
+\usepackage{subfigure}		% for adding several figures in a figure environment
+\usepackage{lscape}			% for landscape type images or tables
+
+\usepackage{enumitem}
+
+% for compact section title spacing
+% \usepackage[compact]{titlesec}
+
+
+% mathmetical presentation
+\usepackage{gensymb}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{exscale}
+\usepackage{textcomp}		% extra symbols
+
+
+% for circled number
+\newcommand{\cl}[1]{\textcircled{\scriptsize #1}}
+
+
+% package for using algorithmic presentation (설치된 경우에만 로드)
+\IfFileExists{algorithm.sty}{%
+  \usepackage{algorithmic}%
+  \usepackage{algorithm}%
+  \renewcommand{\algorithmicrequire}{\makebox[40px]{\hfill\textbf{Input :}}}%
+  \renewcommand{\algorithmicensure}{\makebox[40px]{\hfill\textbf{Output :}}}%
+}{}
+
+% array and table presentation
+\usepackage{array}
+\usepackage{tabulary}
+\usepackage{multirow}
+\usepackage[table]{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{patterns,positioning,fit}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepackage{quantikz}		% 양자회로(ansatz) 다이어그램 (xcolor 뒤에 로드)
+\usepackage{ctable}
+\usepackage{booktabs}		% for typesetting tables at the level of publication
+\usepackage{refcount}		% \getrefnumber (번호 발음 기반 자동 조사)
