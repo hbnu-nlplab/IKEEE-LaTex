@@ -45,6 +45,7 @@
 
 \RequirePackage{graphicx}
 \RequirePackage{amssymb}   % \bigstar (교신저자 표시 ★)
+\RequirePackage{stfloats} % 양단 전체 폭 블록을 페이지 하단에 배치
 
 % 인용: 본문 우측 대괄호 속에 번호를 차례로 기재 [1], [2,5], [3-5] (규정 16조)
 \RequirePackage{cite}
@@ -216,23 +217,58 @@
 %  * 소속(직위 포함) / ★ Corresponding author 연락처 / ※ Acknowledgment /
 %  Manuscript received; revised; accepted / Open-Access 문구
 \newcommand{\kieee@titlefootnote}{%
-  \begingroup
-  \renewcommand{\thefootnote}{}%
-  \long\def\@makefntext##1{\noindent ##1}%
-  \footnotetext{\fontsize{8}{11}\selectfont
+  \begin{figure*}[!b]
+    \begingroup
+
+    % 하단 정보 위 구분선
+    \noindent\rule{\textwidth}{0.4pt}\par
+    \vspace{1.5mm}
+
+    \fontsize{8}{11}\selectfont
+
     \if\relax\detokenize\expandafter{\@affiliation}\relax\else
-      \@affiliation\par\fi
+      \noindent\@affiliation\par
+    \fi
+
     \if\relax\detokenize\expandafter{\@corresponding}\relax\else
-      \ensuremath{\bigstar}\,Corresponding author\par
-      \hspace*{0.9em}\@corresponding\par\fi
+      \noindent\ensuremath{\bigstar}\,Corresponding author\par
+      \noindent\hspace*{0.9em}\@corresponding\par
+    \fi
+
     \if\relax\detokenize\expandafter{\@acknowledgment}\relax\else
-      ※\ Acknowledgment\par
-      \hspace*{0.9em}\@acknowledgment\par\fi
+      \noindent ※\ Acknowledgment\par
+      \noindent\hspace*{0.9em}\@acknowledgment\par
+    \fi
+
     \if\relax\detokenize\expandafter{\@received}\relax\else
-      Manuscript received \@received; revised \@revised;
-      accepted \@accepted\par\fi
-    \@openaccess}%
-  \endgroup}
+      \noindent Manuscript received \@received; revised \@revised;
+      accepted \@accepted\par
+    \fi
+
+    \noindent\@openaccess\par
+    \endgroup
+  \end{figure*}%
+}
+
+% 1단
+% \newcommand{\kieee@titlefootnote}{%
+%   \begingroup
+%   \renewcommand{\thefootnote}{}%
+%   \long\def\@makefntext##1{\noindent ##1}%
+%   \footnotetext{\fontsize{8}{11}\selectfont
+%     \if\relax\detokenize\expandafter{\@affiliation}\relax\else
+%       \@affiliation\par\fi
+%     \if\relax\detokenize\expandafter{\@corresponding}\relax\else
+%       \ensuremath{\bigstar}\,Corresponding author\par
+%       \hspace*{0.9em}\@corresponding\par\fi
+%     \if\relax\detokenize\expandafter{\@acknowledgment}\relax\else
+%       ※\ Acknowledgment\par
+%       \hspace*{0.9em}\@acknowledgment\par\fi
+%     \if\relax\detokenize\expandafter{\@received}\relax\else
+%       Manuscript received \@received; revised \@revised;
+%       accepted \@accepted\par\fi
+%     \@openaccess}%
+%   \endgroup}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 그림/표 제목 (규정 14조)
