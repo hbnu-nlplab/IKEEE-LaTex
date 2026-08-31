@@ -23,8 +23,8 @@
 \engauthor{Gil-Dong Hong\affmark, Ji-Sung Park\affmark\corrmark}
 
 % 초록: Abstract(영문초록) → 요약(국문초록) 순으로 배치, 각각 500자 내외 (규정 12조)
-\engabstract{\input{00abstract_en}}
-\abstract{\input{00abstract}}
+\engabstract{\input{body/00abstract_en}}
+\abstract{\input{body/00abstract}}
 % 요약 하단에 5개 이상의 영문 keywords (규정 12조)
 \keywords{Keyword one, Keyword two, Keyword three, Keyword four, Keyword five}
 
@@ -45,9 +45,15 @@ $^{*}$\,Professor, Dept.\ of Electronics Engineering, OO University}
 \begin{document}
 \maketitle
 
-\input{body/10intro}
-\input{body/20main}
-\input{body/40conclusion}
+
+\input{body/01_intro}
+\input{body/02_relatedwork}
+\input{body/03_method}
+\input{body/04_experiment}
+\input{body/05_analysis}
+\input{body/06_conclusion}
+
+
 
 % ── References: 반드시 영문, 본문 인용 순서대로 (규정 15·16조) ──
 %   저널명·도서명·컨퍼런스명은 이탤릭체, DOI는 부여된 경우에만 표기
